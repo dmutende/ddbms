@@ -1,0 +1,289 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ke.co.scedar</groupId>
+    <artifactId>ddbms</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>ddbms</name>
+
+    <url>http://maven.apache.org</url>
+
+    <properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!--mvn install:install-file -Dfile=../lib/ojdbc14.jar -DgroupId=com.c3p0-0 -DartifactId=c3p0-0 -Dversion=10.2.0.5 -Dpackaging=jar-->
+        <dependency>
+            <groupId>com.c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.concurrent</groupId>
+            <artifactId>concurrent</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gsp</groupId>
+            <artifactId>gsp</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jackson-annotations</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jackson-core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jackson-databind</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jackson-dataformat</groupId>
+            <artifactId>jackson-dataformat</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jackson-module</groupId>
+            <artifactId>jackson-module</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>com.jboss-common</groupId>
+            <artifactId>jboss-common</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.jboss-logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jboss-logmanager</groupId>
+            <artifactId>jboss-logmanager</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jnpserver</groupId>
+            <artifactId>jnpserver</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.junit-jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.junit-platform-commons</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.junit-platform-launcher</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.log4j-api</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.log4j-core</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.log4j-slf4j</groupId>
+            <artifactId>log4j-slf4j</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mchange-commons</groupId>
+            <artifactId>mchange-commons</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mssql-jdbc</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql-connector</groupId>
+            <artifactId>mysql-connector</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stax2-api</groupId>
+            <artifactId>stax2-api</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.undertow-core</groupId>
+            <artifactId>undertow-core</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xnio-api</groupId>
+            <artifactId>xnio-api</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xnio-nio</groupId>
+            <artifactId>xnio-nio</artifactId>
+            <version>0.0.LOCAL</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>ddbms_api</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>ke.co.scedar.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-jar</argument>
+                        <argument>target/${project.build.finalName}.jar</argument>
+                    </arguments>
+                    <mainClass>ke.co.scedar.Main</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <propertyName>java.library.path</propertyName>
+                        <buildDirectory>/usr/local/lib</buildDirectory>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+
+    </build>
+</project>

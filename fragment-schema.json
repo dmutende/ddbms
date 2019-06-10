@@ -1,0 +1,934 @@
+[
+  {
+    "id": "1",
+    "name": "Site 1",
+    "tables": [
+      {
+        "name": "branches",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields": [
+          {
+            "name": "branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "branch_code",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "branch_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "branch_location",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "routes",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "origin_branch_id:eq:1"
+          ]
+        },
+        "fields": [
+          {
+            "name": "route_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_description",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "origin_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": true,
+              "referenceField": "branch_id",
+              "referenceTable": "branches"
+            }
+          },
+          {
+            "name": "destination_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": true,
+              "referenceField": "branch_id",
+              "referenceTable": "branches"
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "drivers",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "registration_branch_id:eq:1"
+          ]
+        },
+        "fields": [
+          {
+            "name": "driver_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_first_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_last_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_other_names",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_national_id_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_driving_license_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_email_address",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_phone_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "registration_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": true,
+              "referenceField": "branch_id",
+              "referenceTable": "branches"
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "customers",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields" : [
+          {
+            "name": "customer_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_first_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_last_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_other_names",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_national_id_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_email_address",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "customer_phone_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "passengers",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields" : [
+          {
+            "name": "passenger_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "passenger_customer_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "passenger_trip_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "passenger_seat_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "passenger_paid",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "trips",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields" : [
+          {
+            "name": "trip_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_description",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_driver_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_vehicle_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_route_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_cost",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_date",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_departure_time",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_eta",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "trip_stops_branch_ids",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "vehicle_types",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields" : [
+          {
+            "name": "vehicle_type_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "vehicle_type_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "vehicle_type_model",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "vehicles",
+        "isFragmented": false,
+        "fragmentationMetadata": null,
+        "fields" : [
+          {
+            "name": "vehicle_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "vehicle_type_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "registration_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "registration_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Site 2",
+    "tables": [
+      {
+        "name": "routes",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "origin_branch_id:eq:2"
+          ]
+        },
+        "fields": [
+          {
+            "name": "route_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_description",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "origin_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "destination_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "drivers",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "registration_branch_id:eq:2"
+          ]
+        },
+        "fields": [
+          {
+            "name": "driver_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_first_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_last_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_other_names",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_national_id_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_driving_license",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_email_address",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_phone_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "registration_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Site 3",
+    "tables": [
+      {
+        "name": "routes",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "origin_branch_id:eq:3"
+          ]
+        },
+        "fields": [
+          {
+            "name": "route_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "route_description",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "origin_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "destination_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      },
+      {
+        "name": "drivers",
+        "isFragmented": true,
+        "fragmentationMetadata": {
+          "fragmentationMode": "PHF",
+          "predicates": [
+            "registration_branch_id:eq:3"
+          ]
+        },
+        "fields": [
+          {
+            "name": "driver_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_first_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_last_name",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_other_names",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_national_id_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_driving_license",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_email_address",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "driver_phone_number",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "registration_branch_id",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "created",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          },
+          {
+            "name": "updated",
+            "foreignKeyMetadata": {
+              "isForeignKey": false,
+              "referenceField": null,
+              "referenceTable": null
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

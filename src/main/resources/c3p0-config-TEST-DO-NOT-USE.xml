@@ -1,0 +1,79 @@
+<c3p0-config>
+    <default-config>
+        <property name="automaticTestTable">con_test</property>
+        <property name="checkoutTimeout">30000</property>
+        <property name="idleConnectionTestPeriod">30</property>
+        <property name="initialPoolSize">10</property>
+        <property name="maxIdleTime">30</property>
+        <property name="maxPoolSize">100</property>
+        <property name="minPoolSize">10</property>
+        <property name="maxStatements">200</property>
+
+        <!-- ALL -->
+        <property name="acquireIncrement">DEFAULT</property>
+        <property name="acquireRetryAttempts">DEFAULT</property>
+        <property name="acquireRetryDelay">DEFAULT</property>
+        <property name="autoCommitOnClose">DEFAULT</property>
+        <property name="automaticTestTable">DEFAULT</property>
+        <property name="breakAfterAcquireFailure">DEFAULT</property>
+        <property name="checkoutTimeout">DEFAULT</property>
+        <property name="connectionCustomizerClassName">DEFAULT</property>
+        <property name="connectionTesterClassName">DEFAULT</property>
+        <property name="contextClassLoaderSource">DEFAULT</property>
+        <property name="dataSourceName">DEFAULT</property>
+        <property name="debugUnreturnedConnectionStackTraces">DEFAULT</property>
+        <property name="driverClass">DEFAULT</property>
+        <property name="extensions">DEFAULT</property>
+        <property name="factoryClassLocation">DEFAULT</property>
+        <property name="forceIgnoreUnresolvedTransactions">DEFAULT</property>
+        <property name="forceSynchronousCheckins">DEFAULT</property>
+        <property name="forceUseNamedDriverClass">DEFAULT</property>
+        <property name="idleConnectionTestPeriod">DEFAULT</property>
+        <property name="initialPoolSize">DEFAULT</property>
+        <property name="jdbcUrl">DEFAULT</property>
+        <property name="maxAdministrativeTaskTime">DEFAULT</property>
+        <property name="maxConnectionAge">DEFAULT</property>
+        <property name="maxIdleTime">DEFAULT</property>
+        <property name="maxIdleTimeExcessConnections">DEFAULT</property>
+        <property name="maxPoolSize">DEFAULT</property>
+        <property name="maxStatements">DEFAULT</property>
+        <property name="maxStatementsPerConnection">DEFAULT</property>
+        <property name="minPoolSize">DEFAULT</property>
+        <property name="numHelperThreads">DEFAULT</property>
+        <property name="overrideDefaultUser">DEFAULT</property>
+        <property name="overrideDefaultPassword">DEFAULT</property>
+        <property name="password">DEFAULT</property>
+        <property name="preferredTestQuery">DEFAULT</property>
+        <property name="privilegeSpawnedThreads">DEFAULT</property>
+        <property name="propertyCycle">DEFAULT</property>
+        <property name="statementCacheNumDeferredCloseThreads">DEFAULT</property>
+        <property name="testConnectionOnCheckin">DEFAULT</property>
+        <property name="testConnectionOnCheckout">DEFAULT</property>
+        <property name="unreturnedConnectionTimeout">DEFAULT</property>
+        <property name="user">DEFAULT</property>
+        <property name="usesTraditionalReflectiveProxies">DEFAULT</property>
+        <!-- END ALL -->
+
+        <user-overrides user="test-user">
+            <property name="maxPoolSize">10</property>
+            <property name="minPoolSize">1</property>
+            <property name="maxStatements">0</property>
+        </user-overrides>
+    </default-config> <!-- This app is massive! -->
+    <named-config name="intergalactoApp">
+        <property name="acquireIncrement">50</property>
+        <property name="initialPoolSize">100</property>
+        <property name="minPoolSize">50</property>
+        <property name="maxPoolSize">1000
+        </property> <!-- intergalactoApp adopts a different approach to configuring statement caching -->
+        <property name="maxStatements">0</property>
+        <property name="maxStatementsPerConnection">5</property> <!-- he's important, but there's only one of him -->
+        <user-overrides user="master-of-the-universe">
+            <property name="acquireIncrement">1</property>
+            <property name="initialPoolSize">1</property>
+            <property name="minPoolSize">1</property>
+            <property name="maxPoolSize">5</property>
+            <property name="maxStatementsPerConnection">50</property>
+        </user-overrides>
+    </named-config>
+</c3p0-config>

@@ -137,9 +137,9 @@ $PATH/ddbms/target
 - Here are some I have  prepared.
     - Sample 1:
         ```sql
-            select driver_id, driver_last_name
-            from drivers
-            where registration_branch_id = 2;
+        select driver_id, driver_last_name
+        from drivers
+        where registration_branch_id = 2;
         ```
     - Sample 2:
         ```sql

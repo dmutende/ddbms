@@ -160,7 +160,7 @@ $PATH/ddbms/target
         group by r.route_id, r.route_name;
         ```
     - Sample 4 (filter `r.route_name = 'NBO(CBD)-NBO(KAREN)'`):
-            - Generates revenue for route `'NBO(CBD)-NBO(KAREN)'` report for 'May - June 2019'
+        - Generates revenue for route `'NBO(CBD)-NBO(KAREN)'` report for 'May - June 2019'
         ```sql
         select r.route_id, r.route_name, count(t.trip_id) as trips_count, sum(t.trip_cost) as route_revenue
         from routes r

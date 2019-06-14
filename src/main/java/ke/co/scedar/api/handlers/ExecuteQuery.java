@@ -8,6 +8,7 @@ import ke.co.scedar.api.payloads.ExecuteQueryPayload;
 import ke.co.scedar.db.fragment_schema.catalog.QueryRouter;
 import ke.co.scedar.parser.SqlParser;
 import ke.co.scedar.parser.SqlStatementComponents;
+import ke.co.scedar.utils.Constants;
 import ke.co.scedar.utils.ExceptionRepresentation;
 import ke.co.scedar.utils.Logging;
 
@@ -19,6 +20,17 @@ public class ExecuteQuery extends CustomHandler {
 
         ExecuteQueryPayload payload = (ExecuteQueryPayload)
                 getBodyObject(exchange, ExecuteQueryPayload.class);
+
+        if(payload == null){
+            send(exchange, new ExceptionRepresentation(
+                    exchange.getQueryParameters().get(Constants.MARSHALL_ERROR).getFirst(),
+                    exchange.getRequestURI(),
+                    "Error: Unable to understand payload.",
+                    StatusCodes.INTERNAL_SERVER_ERROR,
+                    exchange.getRequestMethod()
+            ), StatusCodes.INTERNAL_SERVER_ERROR);
+            return;
+        }
 
         //Parse Query and verify it against existing application fragment schema
         SqlStatementComponents sqlStatementComponents = new SqlParser().parse(

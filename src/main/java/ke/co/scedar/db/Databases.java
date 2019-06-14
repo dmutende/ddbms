@@ -25,19 +25,19 @@ public class Databases {
         //Initialize database connections and objects
         SQL_SERVER_DB = new Database(
                 DbVendor.MicrosoftSQL, "TransyDB",
-                "localhost", 1433, "elon", "dpm854419@UoN",
+                "192.168.43.55", 1433, "elon", "dpm854419@UoN",
                 "config.xml", true
         );
 
         POSTGRES_DB = new Database(
                 DbVendor.PostgresSQL, "transy_db",
-                "localhost", 5432, "elon", "dpm854419@UoN",
+                "192.168.43.151", 5432, "elon", "elon",
                 "config.xml", true
         );
 
         MYSQL_DB = new Database(
                 DbVendor.MySQL, "transy_db",
-                "localhost", 3306, "elon_transy", "dpm854419@UoN",
+                "192.168.43.55", 3306, "elon_transy", "dpm854419@UoN",
                 "config.xml", true
         );
 
